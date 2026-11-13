@@ -1,0 +1,39 @@
+{
+  "id": "rosca_direta_halteres",
+  "nome": "Rosca direta com halteres",
+  "categoria": "forca",
+  "equipamento": ["halteres"],
+  "vista_camera": "lateral",
+  "lados": "bilateral",
+  "contraindicacoes": ["cotovelo", "punho"],
+  "articulacoes_chave": {
+    "cotovelo_dir": [12, 14, 16],
+    "cotovelo_esq": [11, 13, 15]
+  },
+  "angulo_principal": "cotovelo",
+  "medidas": {
+    "tronco": { "tipo": "inclinacao", "de": [23, 24], "para": [11, 12] },
+    "cotovelo_x": { "tipo": "deslocamento", "pontos": [13, 14], "referencia": [11, 12], "eixo": "x" }
+  },
+  "fases": [
+    { "nome": "descida_completa", "cotovelo": [150, 180] },
+    { "nome": "subida", "cotovelo": [45, 150] },
+    { "nome": "topo", "cotovelo": [0, 55] }
+  ],
+  "ciclo": ["descida_completa", "subida", "topo", "subida", "descida_completa"],
+  "fase_concentrica": "ida",
+  "limites": { "limite": 0.18 },
+  "regras_erro": [
+    { "id": "balanco_tronco", "condicao": "variacao_angulo_tronco > 10", "severidade": "tecnica", "fala": "Mantenha o tronco parado, sem balançar.", "pontos": [11, 12, 23, 24] },
+    { "id": "cotovelo_foge", "condicao": "deslocamento_cotovelo_x > limite", "severidade": "tecnica", "fala": "Cotovelo colado ao corpo.", "pontos": [13, 14] },
+    { "id": "amplitude_curta", "condicao": "min_angulo_cotovelo > 55", "severidade": "tecnica", "fala": "Suba mais, contraia no topo." },
+    { "id": "sem_extensao", "condicao": "volta_max_angulo_cotovelo < 150", "severidade": "tecnica", "fala": "Estenda o braço por completo embaixo." }
+  ],
+  "fala_ciclo_incompleto": "Faça o movimento completo, de baixo até em cima.",
+  "metricas": ["amplitude_rom", "velocidade_concentrica", "tempo_por_fase"],
+  "tempo_minimo_fase_s": 0.4,
+  "pose_inicial": "em_pe_bracos_estendidos",
+  "condicao_pose_inicial": "angulo_tronco < 20",
+  "dicas_inicio": ["Pés na largura dos ombros", "Cotovelos junto ao tronco"],
+  "observacao": "Valores ilustrativos: devem ser definidos com base na literatura e revisados por profissional de educação física."
+}

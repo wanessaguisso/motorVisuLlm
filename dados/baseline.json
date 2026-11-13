@@ -1,0 +1,55 @@
+{
+  "agachamento_livre": {
+    "concordancia": 1,
+    "erro_contagem_maximo": 0,
+    "falsos_alertas_por_serie": 0,
+    "por_erro": {
+      "amplitude_curta": 1,
+      "sem_extensao": 1,
+      "tronco_inclinado": 1
+    }
+  },
+  "desenvolvimento_ombros": {
+    "concordancia": 1,
+    "erro_contagem_maximo": 0,
+    "falsos_alertas_por_serie": 0,
+    "por_erro": {
+      "amplitude_curta": 1,
+      "descida_curta": 1,
+      "tronco_arqueado": 1
+    }
+  },
+  "elevacao_lateral": {
+    "concordancia": 1,
+    "erro_contagem_maximo": 0,
+    "falsos_alertas_por_serie": 0,
+    "por_erro": {
+      "amplitude_curta": 1,
+      "acima_dos_ombros": 1,
+      "sem_descida": 1,
+      "cotovelo_dobrado": 1,
+      "balanco_tronco": 1
+    }
+  },
+  "flexao_de_braco": {
+    "concordancia": 1,
+    "erro_contagem_maximo": 0,
+    "falsos_alertas_por_serie": 0,
+    "por_erro": {
+      "amplitude_curta": 1,
+      "sem_extensao": 1,
+      "quadril_desalinhado": 1
+    }
+  },
+  "rosca_direta_halteres": {
+    "concordancia": 1,
+    "erro_contagem_maximo": 0,
+    "falsos_alertas_por_serie": 0,
+    "por_erro": {
+      "amplitude_curta": 1,
+      "sem_extensao": 1,
+      "balanco_tronco": 1,
+      "cotovelo_foge": 1
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "motor-visu-llm",
+  "version": "0.1.0",
+  "description": "Personal trainer ativo com visão computacional: MVP (PWA + motor de visão + agente de linguagem)",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "postinstall": "node scripts/preparar.mjs",
+    "preparar": "node scripts/preparar.mjs",
+    "start": "node server/server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "bancada": "node ferramentas/gerar-sinteticos.mjs && node ferramentas/bancada.mjs",
+    "bancada:gerar": "node ferramentas/gerar-sinteticos.mjs",
+    "bancada:baseline": "node ferramentas/gerar-sinteticos.mjs && node ferramentas/bancada.mjs --gravar-baseline"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "@mediapipe/tasks-vision": "^1.2.3"
+  }
+}

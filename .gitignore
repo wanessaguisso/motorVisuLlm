@@ -1,0 +1,10 @@
+node_modules/
+web/vendor/
+.env
+*.log
+# gravações sintéticas são regeneradas por "npm run bancada:gerar"
+dados/videos_rotulados/sintetico-*.json
+# vídeos e gravações de voluntários nunca entram no repositório (TCLE / LGPD)
+dados/videos_rotulados/*.mp4
+dados/videos_rotulados/*.mov
+dados/videos_rotulados/*.webm

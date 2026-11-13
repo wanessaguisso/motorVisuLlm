@@ -1,0 +1,38 @@
+{
+  "id": "flexao_de_braco",
+  "nome": "Flexão de braço",
+  "categoria": "forca",
+  "equipamento": [],
+  "vista_camera": "lateral",
+  "lados": "bilateral",
+  "contraindicacoes": ["ombro", "cotovelo", "punho"],
+  "articulacoes_chave": {
+    "cotovelo_dir": [12, 14, 16],
+    "cotovelo_esq": [11, 13, 15],
+    "alinhamento_dir": [12, 24, 28],
+    "alinhamento_esq": [11, 23, 27]
+  },
+  "angulo_principal": "cotovelo",
+  "medidas": {
+    "tronco": { "tipo": "inclinacao", "de": [23, 24], "para": [11, 12] }
+  },
+  "fases": [
+    { "nome": "alto", "cotovelo": [150, 180] },
+    { "nome": "descida", "cotovelo": [95, 150] },
+    { "nome": "baixo", "cotovelo": [0, 100] }
+  ],
+  "ciclo": ["alto", "descida", "baixo", "descida", "alto"],
+  "fase_concentrica": "volta",
+  "regras_erro": [
+    { "id": "quadril_desalinhado", "condicao": "min_angulo_alinhamento < 160", "severidade": "seguranca", "fala": "Contraia o abdômen e mantenha o corpo reto.", "pontos": [23, 24] },
+    { "id": "amplitude_curta", "condicao": "min_angulo_cotovelo > 100", "severidade": "tecnica", "fala": "Desça mais, peito perto do chão." },
+    { "id": "sem_extensao", "condicao": "volta_max_angulo_cotovelo < 150", "severidade": "tecnica", "fala": "Estenda os braços por completo em cima." }
+  ],
+  "fala_ciclo_incompleto": "Faça a flexão completa, descendo e subindo até o fim.",
+  "metricas": ["amplitude_rom", "velocidade_concentrica", "tempo_por_fase"],
+  "tempo_minimo_fase_s": 0.4,
+  "pose_inicial": "prancha_bracos_estendidos",
+  "condicao_pose_inicial": "angulo_tronco > 55",
+  "dicas_inicio": ["Mãos abaixo dos ombros", "Corpo reto, da cabeça aos pés"],
+  "observacao": "Valores ilustrativos: devem ser definidos com base na literatura e revisados por profissional de educação física."
+}

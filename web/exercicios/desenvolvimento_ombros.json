@@ -1,0 +1,38 @@
+{
+  "id": "desenvolvimento_ombros",
+  "nome": "Desenvolvimento de ombros",
+  "categoria": "forca",
+  "equipamento": ["halteres"],
+  "vista_camera": "frontal",
+  "lados": "bilateral",
+  "contraindicacoes": ["ombro", "coluna"],
+  "articulacoes_chave": {
+    "cotovelo_dir": [12, 14, 16],
+    "cotovelo_esq": [11, 13, 15],
+    "ombro_dir": [24, 12, 14],
+    "ombro_esq": [23, 11, 13]
+  },
+  "angulo_principal": "cotovelo",
+  "medidas": {
+    "tronco": { "tipo": "inclinacao", "de": [23, 24], "para": [11, 12] }
+  },
+  "fases": [
+    { "nome": "baixo", "cotovelo": [40, 105] },
+    { "nome": "subida", "cotovelo": [100, 155] },
+    { "nome": "topo", "cotovelo": [150, 180] }
+  ],
+  "ciclo": ["baixo", "subida", "topo", "subida", "baixo"],
+  "fase_concentrica": "ida",
+  "regras_erro": [
+    { "id": "tronco_arqueado", "condicao": "variacao_angulo_tronco > 8", "severidade": "seguranca", "fala": "Não incline o tronco. Abdômen firme.", "pontos": [11, 12, 23, 24] },
+    { "id": "amplitude_curta", "condicao": "max_angulo_cotovelo < 150", "severidade": "tecnica", "fala": "Estenda os braços por completo em cima." },
+    { "id": "descida_curta", "condicao": "volta_min_angulo_cotovelo > 105", "severidade": "tecnica", "fala": "Desça os halteres até a altura das orelhas." }
+  ],
+  "fala_ciclo_incompleto": "Faça o movimento completo, da altura das orelhas até em cima.",
+  "metricas": ["amplitude_rom", "velocidade_concentrica", "tempo_por_fase"],
+  "tempo_minimo_fase_s": 0.4,
+  "pose_inicial": "em_pe_halteres_nos_ombros",
+  "condicao_pose_inicial": "angulo_tronco < 15 e angulo_ombro > 45",
+  "dicas_inicio": ["Halteres na altura das orelhas", "Cotovelos abertos, abaixo dos punhos"],
+  "observacao": "Valores ilustrativos: devem ser definidos com base na literatura e revisados por profissional de educação física."
+}

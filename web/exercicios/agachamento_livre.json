@@ -1,0 +1,38 @@
+{
+  "id": "agachamento_livre",
+  "nome": "Agachamento livre",
+  "categoria": "forca",
+  "equipamento": [],
+  "vista_camera": "lateral",
+  "lados": "bilateral",
+  "contraindicacoes": ["joelho", "quadril", "coluna"],
+  "articulacoes_chave": {
+    "joelho_dir": [24, 26, 28],
+    "joelho_esq": [23, 25, 27],
+    "quadril_dir": [12, 24, 26],
+    "quadril_esq": [11, 23, 25]
+  },
+  "angulo_principal": "joelho",
+  "medidas": {
+    "tronco": { "tipo": "inclinacao", "de": [23, 24], "para": [11, 12] }
+  },
+  "fases": [
+    { "nome": "em_pe", "joelho": [155, 180] },
+    { "nome": "descida", "joelho": [100, 155] },
+    { "nome": "fundo", "joelho": [0, 105] }
+  ],
+  "ciclo": ["em_pe", "descida", "fundo", "descida", "em_pe"],
+  "fase_concentrica": "volta",
+  "regras_erro": [
+    { "id": "tronco_inclinado", "condicao": "max_angulo_tronco > 55", "severidade": "seguranca", "fala": "Peito aberto, não incline tanto o tronco.", "pontos": [11, 12, 23, 24] },
+    { "id": "amplitude_curta", "condicao": "min_angulo_joelho > 105", "severidade": "tecnica", "fala": "Desça um pouco mais, até as coxas ficarem paralelas ao chão." },
+    { "id": "sem_extensao", "condicao": "volta_max_angulo_joelho < 155", "severidade": "tecnica", "fala": "Suba até ficar em pé por completo." }
+  ],
+  "fala_ciclo_incompleto": "Faça o agachamento completo, descendo e subindo até o fim.",
+  "metricas": ["amplitude_rom", "velocidade_concentrica", "tempo_por_fase"],
+  "tempo_minimo_fase_s": 0.4,
+  "pose_inicial": "em_pe",
+  "condicao_pose_inicial": "angulo_tronco < 20",
+  "dicas_inicio": ["Pés na largura dos ombros", "Peso nos calcanhares"],
+  "observacao": "Valores ilustrativos: devem ser definidos com base na literatura e revisados por profissional de educação física."
+}
